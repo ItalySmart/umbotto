@@ -1,11 +1,13 @@
 FROM node:16
 
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
 WORKDIR /opt/
 COPY ./package.json ./
-RUN yarn install
+RUN pnpm install
 
 COPY . .
 
-run yarn build
+run pnpm build
 
-CMD ["yarn", "start"]
+CMD ["pnpm", "start"]

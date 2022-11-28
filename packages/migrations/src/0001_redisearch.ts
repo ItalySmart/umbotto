@@ -40,6 +40,8 @@ const main = async () => {
       )
       .catch(err => console.error(err));
   });
+
+  console.log("Done! Press Ctrl+C to exit.");
 };
 
 main();

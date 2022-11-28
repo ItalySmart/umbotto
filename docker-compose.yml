@@ -1,0 +1,22 @@
+version: "3"
+services:
+  umbotto:
+    build:
+      context: ./packages/bot
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      REDIS_HOST: redis
+    volumes:
+      - ./:/opt/app
+
+  redis:
+    image: redislabs/redisearch:latest
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:

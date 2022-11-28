@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "start": "node dist/index.js",
-    "build": "esbuild --bundle --platform=node --target=node16 src/0001_redisearch.ts --outfile=dist/0001_redisearch.js"
+    "build": "esbuild --bundle --platform=node --target=node16 src/0001_redisearch.ts --outfile=dist/0001_redisearch.cjs"
   },
   "dependencies": {
     "ioredis": "5.2.4",
